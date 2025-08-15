@@ -1,0 +1,55 @@
+‘âàãªâãà  ¯ ¯®ª
+‘¥à¨©­ë© ­®¬¥à â®¬ : F438-0CAE
+C:.
+³   config.py
+³   favicon.ico
+³   main.py
+³   structure.txt
+³   
+ÃÄÄÄcontrollers
+³   ³   essay_generator.py
+³   ³   __init__.py
+³   ³   
+³   ÀÄÄÄ__pycache__
+³           essay_generator.cpython-312.pyc
+³           essay_generator.cpython-313.pyc
+³           __init__.cpython-312.pyc
+³           __init__.cpython-313.pyc
+³           
+ÃÄÄÄmodels
+³   ³   api_client.py
+³   ³   essay.py
+³   ³   __init__.py
+³   ³   
+³   ÀÄÄÄ__pycache__
+³           api_client.cpython-312.pyc
+³           api_client.cpython-313.pyc
+³           essay.cpython-312.pyc
+³           essay.cpython-313.pyc
+³           __init__.cpython-312.pyc
+³           __init__.cpython-313.pyc
+³           
+ÃÄÄÄutils
+³   ³   docx_formatter.py
+³   ³   __init__.py
+³   ³   
+³   ÀÄÄÄ__pycache__
+³           docx_formatter.cpython-312.pyc
+³           docx_formatter.cpython-313.pyc
+³           __init__.cpython-312.pyc
+³           __init__.cpython-313.pyc
+³           
+ÃÄÄÄviews
+³   ³   main_window.py
+³   ³   __init__.py
+³   ³   
+³   ÀÄÄÄ__pycache__
+³           main_window.cpython-312.pyc
+³           main_window.cpython-313.pyc
+³           __init__.cpython-312.pyc
+³           __init__.cpython-313.pyc
+³           
+ÀÄÄÄ__pycache__
+        config.cpython-312.pyc
+        config.cpython-313.pyc
+        
