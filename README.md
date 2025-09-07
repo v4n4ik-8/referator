@@ -6,8 +6,9 @@ git clone https://github.com/v4n4ik-8/referator.git
 ```
 ___
 ### Для не профи
-Тут короче будет `exe-файл`, но я пока не скомпилировал, поэтому пока что не будет
+**[Скачать](https://github.com/v4n4ik-8/referator/releases/download/v1.0.0/Referator.exe)**
 
+___
 ## !!!Важно!!!
 Для запуска после клонирования вам понадобится `.env` файл, в котором будет 
 ```
