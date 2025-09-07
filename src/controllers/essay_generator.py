@@ -11,13 +11,14 @@ class GeneratorWorker(QThread):
     finished = Signal(bool, str)
     essay_completed = Signal(str)  # Сигнал о готовом реферате
     
-    def __init__(self, topics: List[str], num_chapters: int, symbols_per_chapter: int, output_path: str, language: str = "Русский"):
+    def __init__(self, topics: List[str], num_chapters: int, symbols_per_chapter: int, output_path: str, language: str = "Русский", discipline: str = ""):
         super().__init__()
         self.topics = topics
         self.num_chapters = num_chapters
         self.symbols_per_chapter = symbols_per_chapter
         self.output_path = output_path
         self.language = language
+        self.discipline = discipline
         self.api_client = APIClient()
         self.formatter = DocumentFormatter()
         self.stop_generation = False
@@ -123,10 +124,10 @@ class EssayGeneratorController(QObject):
         super().__init__()
         self.worker = None
     
-    def generate_essays(self, topics: List[str], num_chapters: int, symbols_per_chapter: int, output_path: str, language: str = "Русский") -> None:
+    def generate_essays(self, topics: List[str], num_chapters: int, symbols_per_chapter: int, output_path: str, language: str = "Русский", discipline: str = "") -> None:
         """Генерирует рефераты для списка тем"""
         # Создаем и настраиваем worker
-        self.worker = GeneratorWorker(topics, num_chapters, symbols_per_chapter, output_path, language)
+        self.worker = GeneratorWorker(topics, num_chapters, symbols_per_chapter, output_path, language, discipline)
         
         # Подключаем сигналы
         self.worker.progress.connect(self.progress.emit)

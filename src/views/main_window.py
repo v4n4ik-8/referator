@@ -47,6 +47,14 @@ class MainWindow(QMainWindow):
         scroll.setWidgetResizable(True)
         scroll_content = QWidget()
         scroll_layout = QVBoxLayout(scroll_content)
+
+        # Поле для учебной дисциплины
+        discipline_layout = QHBoxLayout()
+        discipline_label = QLabel("Учебная дисциплина:")
+        self.discipline_input = QLineEdit()
+        self.discipline_input.setPlaceholderText("Введите название дисциплины...")
+        discipline_layout.addWidget(discipline_label)
+        discipline_layout.addWidget(self.discipline_input)
         
         # Секция ввода тем
         topics_group = QFrame()
@@ -58,6 +66,7 @@ class MainWindow(QMainWindow):
         self.topics_input.setPlaceholderText("Введите темы рефератов...")
         topics_layout.addWidget(topics_label)
         topics_layout.addWidget(self.topics_input)
+
 
         # Добавляем кнопку очистки для тем
         topics_buttons_layout = QHBoxLayout()
@@ -132,6 +141,7 @@ class MainWindow(QMainWindow):
 
         # Добавляем группы в скроллируемую область
         scroll_layout.addWidget(topics_group)
+        scroll_layout.addLayout(discipline_layout)
         scroll_layout.addWidget(settings_group)
         scroll_layout.addStretch()
         
@@ -224,6 +234,11 @@ class MainWindow(QMainWindow):
         if not topics or not topics[0]:
             QMessageBox.warning(self, "Ошибка", "Введите хотя бы одну тему!")
             return
+        
+        discipline = self.discipline_input.text().strip()
+        if not discipline:
+            QMessageBox.warning(self, "Ошибка", "Введите название учебной дисциплины!")
+            return
 
         if not self.path_input.text():
             QMessageBox.warning(self, "Ошибка", "Выберите путь для сохранения рефератов!")
@@ -240,7 +255,8 @@ class MainWindow(QMainWindow):
             num_chapters=self.chapters_spin.value(),
             symbols_per_chapter=self.symbols_spin.value(),
             output_path=self.path_input.text(),
-            language=self.language_combo.currentText()
+            language=self.language_combo.currentText(),
+            discipline=discipline
         )
 
     def update_progress(self, value: int):

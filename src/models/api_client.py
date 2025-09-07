@@ -133,9 +133,9 @@ class APIClient:
                 return self.make_request(prompt, attempt + 1)
             raise APIResponseError(500)
 
-    def get_essay_structure(self, topic: str, num_chapters: int, language: str = "Русский") -> str:
+    def get_essay_structure(self, topic: str, num_chapters: int, language: str = "Русский", discipline: str = "") -> str:
         """Получает структуру реферата"""
-        prompt = f"""Создай структуру реферата на тему "{topic}".
+        prompt = f"""Создай структуру реферата по учебной дисциплине "{discipline}" на тему "{topic}".
 
                         Язык генерации: {language}
 
